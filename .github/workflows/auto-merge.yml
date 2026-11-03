@@ -10,7 +10,7 @@ permissions:
 jobs:
   auto-merge:
     if: github.actor == 'scala-steward'
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, copilot-obs]
     steps:
       - name: Auto-approve
         run: gh pr review --approve "$PR_URL"

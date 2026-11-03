@@ -3,7 +3,7 @@ on:
   issue_comment:
 jobs:
   pr_agent_job:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, copilot-obs]
     permissions:
       issues: write
       pull-requests: write
