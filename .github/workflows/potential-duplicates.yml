@@ -4,7 +4,7 @@ on:
     types: [opened, edited]
 jobs:
   run:
-    runs-on: [self-hosted, copilot-obs]
+    runs-on: [self-hosted, agent-runners]
     steps:
       - uses: wow-actions/potential-duplicates@v1
         with:

@@ -17,7 +17,7 @@ env:
 
 jobs:
   prepare:
-    runs-on: [self-hosted, copilot-obs]
+    runs-on: [self-hosted, agent-runners]
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
       version: ${{ steps.version.outputs.version }}
@@ -52,7 +52,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix: ${{ fromJson(needs.prepare.outputs.matrix) }}
-    runs-on: [self-hosted, copilot-obs]
+    runs-on: [self-hosted, agent-runners]
     steps:
       - name: Checkout current branch (full)
         uses: actions/checkout@v7
@@ -125,7 +125,7 @@ jobs:
     name: CI Gate
     needs: [build]
     if: always()
-    runs-on: [self-hosted, copilot-obs]
+    runs-on: [self-hosted, agent-runners]
     steps:
       - name: Check build results
         run: |
@@ -143,7 +143,7 @@ jobs:
         os: [ubuntu-latest]
         scala: [2.12.20]
         java: [temurin@17]
-    runs-on: [self-hosted, copilot-obs]
+    runs-on: [self-hosted, agent-runners]
     steps:
       - name: Checkout current branch (full)
         uses: actions/checkout@v7
