@@ -3,7 +3,7 @@ on:
   issue_comment:
 jobs:
   pr_agent_job:
-    runs-on: [self-hosted, agent-runners]
+    runs-on: agent-runners
     permissions:
       issues: write
       pull-requests: write
