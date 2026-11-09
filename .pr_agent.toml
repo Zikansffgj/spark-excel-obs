@@ -1,6 +1,7 @@
-# exosec-obs 运维配置：模型走中转站；key 由 workflow env OPENAI.KEY 注入（secret OPENAI_KEY）
+# exosec-obs 运维配置：模型走中转站；key 由 workflow env 注入（secret OPENAI_KEY）
 [config]
 model = "openai/glm-5.3"
+custom_model_max_tokens = 128000
 
 [openai]
 api_base = "https://open.bigmodel.cn/api/paas/v4"
